@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class CollectibleCount : MonoBehaviour
 {
-    
     TMPro.TMP_Text text;
-    int count;
+    public int Count { get; private set; }
 
     void Awake()
     {
         text = GetComponent<TMPro.TMP_Text>();
-
     }
 
     void Start() => UpdateCount();
@@ -21,12 +19,12 @@ public class CollectibleCount : MonoBehaviour
 
     void OnCollectibleCollected()
     {
-        count++;
+        Count++;
         UpdateCount();
     }
 
     void UpdateCount()
     {
-        text.text = $"{count} / {Collectible.total}";
+        text.text = $"{Count} / {Collectible.total}";
     }
 }
