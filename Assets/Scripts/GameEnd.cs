@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameEnd : MonoBehaviour
 {
@@ -25,8 +26,8 @@ public class GameEnd : MonoBehaviour
 
     void EndGame()
     {
+
         Debug.Log("Game Ended! Congratulations, you've collected all the items.");
-        // Add any additional logic for ending the game, such as displaying a UI message or transitioning to an end scene
-        // Example: SceneManager.LoadScene("EndScene");
+        SceneManager.LoadSceneAsync(3);
     }
 }
